@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SmartMeal Planner - Feminine Pastel Design System */
+
+@layer base {
+  :root {
+    /* Soft cream background */
+    --background: 30 50% 98%;
+    --foreground: 280 20% 25%;
+
+    /* Card with subtle lavender tint */
+    --card: 280 30% 99%;
+    --card-foreground: 280 20% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 280 20% 25%;
+
+    /* Primary - Soft Lavender */
+    --primary: 270 50% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Blush Pink */
+    --secondary: 340 60% 90%;
+    --secondary-foreground: 340 40% 35%;
+
+    /* Muted - Light Cream */
+    --muted: 30 30% 95%;
+    --muted-foreground: 280 15% 50%;
+
+    /* Accent - Soft Peach */
+    --accent: 20 80% 88%;
+    --accent-foreground: 20 60% 35%;
+
+    /* Success - Soft Mint */
+    --success: 150 50% 75%;
+    --success-foreground: 150 50% 20%;
+
+    --destructive: 0 65% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 280 20% 90%;
+    --input: 280 20% 92%;
+    --ring: 270 50% 65%;
+
+    --radius: 1rem;
+
+    /* Custom colors for meals */
+    --breakfast: 45 90% 85%;
+    --lunch: 150 45% 80%;
+    --dinner: 270 40% 85%;
+    --snack: 20 80% 88%;
+
+    /* Gradient colors */
+    --gradient-start: 270 50% 65%;
+    --gradient-end: 340 60% 75%;
+  }
+
+  .dark {
+    --background: 280 25% 10%;
+    --foreground: 30 30% 95%;
+
+    --card: 280 20% 15%;
+    --card-foreground: 30 30% 95%;
+
+    --popover: 280 20% 12%;
+    --popover-foreground: 30 30% 95%;
+
+    --primary: 270 50% 70%;
+    --primary-foreground: 280 25% 10%;
+
+    --secondary: 340 40% 25%;
+    --secondary-foreground: 340 60% 90%;
+
+    --muted: 280 15% 20%;
+    --muted-foreground: 280 15% 65%;
+
+    --accent: 20 50% 25%;
+    --accent-foreground: 20 80% 90%;
+
+    --success: 150 40% 30%;
+    --success-foreground: 150 50% 90%;
+
+    --destructive: 0 50% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 280 15% 25%;
+    --input: 280 15% 22%;
+    --ring: 270 50% 70%;
+
+    --breakfast: 45 60% 25%;
+    --lunch: 150 35% 25%;
+    --dinner: 270 30% 30%;
+    --snack: 20 50% 25%;
+
+    --gradient-start: 270 50% 55%;
+    --gradient-end: 340 50% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(12px);
+    background: hsl(var(--card) / 0.7);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .soft-shadow {
+    box-shadow: 0 4px 20px -2px hsl(var(--primary) / 0.15),
+                0 2px 8px -2px hsl(var(--primary) / 0.1);
+  }
+
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px -8px hsl(var(--primary) / 0.25);
+  }
+
+  .meal-breakfast {
+    background: hsl(var(--breakfast));
+  }
+
+  .meal-lunch {
+    background: hsl(var(--lunch));
+  }
+
+  .meal-dinner {
+    background: hsl(var(--dinner));
+  }
+
+  .meal-snack {
+    background: hsl(var(--snack));
+  }
+}
